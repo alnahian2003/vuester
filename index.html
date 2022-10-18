@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Vue 3</title>
+  </head>
+  <body class="p-4 text-slate-700">
+    <div
+      id="app"
+      class="flex flex-col items-center space-y-8 max-w-xl content-center mx-auto"
+    >
+      <h1 class="text-5xl font-bold">{{ greeting }}</h1>
+      <input
+        class="px-4 py-3 rounded-lg bg-blue-50 text-blue-600 font-semibold text-2xl w-full focus:outline-blue-500 focus:drop-shadow-xl"
+        type="text"
+        v-model="greeting"
+      />
+      <p class="text-2xl align-middle pt-10 text-slate-500">
+        <span class="text-orange-500 bg-orange-50 px-4 rounded-full"
+          >{{ greeting.length }}</span
+        >
+        Characters
+      </p>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            greeting: "Hello World",
+          };
+        },
+
+        mounted() {
+          setTimeout(() => {
+            this.greeting = "My Name is Al Nahian";
+          }, 3000);
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
