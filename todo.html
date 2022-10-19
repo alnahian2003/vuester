@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Lists, Conditionals, and Computed Properties</title>
+  </head>
+  <body class="text-slate-600 bg-gray-50">
+    <div
+      id="app"
+      class="space-y-8 mx-auto max-w-xl my-20 bg-white rounded-lg drop-shadow-lg p-5"
+    >
+      <h1 class="text-4xl text-center font-bold text-green-600">VUE TODO</h1>
+
+      <section>
+        <form
+          class="flex flex-row gap-2 justify-between"
+          @submit.prevent="addNewTodo"
+        >
+          <input
+            type="text"
+            id="first_name"
+            class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 shrink text-xl outline-green-500 transition-all"
+            placeholder="What's you're gonna do next?"
+            required
+            v-model="newTodo"
+          />
+          <button
+            type="submit"
+            class="shrink-0 text-4xl align-middle bg-green-600 text-white rounded-lg p-3"
+          >
+            +
+          </button>
+        </form>
+
+        <!-- Default Text -->
+        <p
+          class="font-bold text-2xl text-slate-300 my-5 text-center"
+          v-if="!todoInProgress.length"
+        >
+          You don't have any todo yet. Create new!
+        </p>
+      </section>
+
+      <!-- Todos In Progress -->
+      <section v-if="todoInProgress.length">
+        <h3 class="font-bold text-2xl mb-4">In Progress:</h3>
+        <hr />
+        <ul class="text-xl font-semibold text-blue-600">
+          <li v-for="(todo) in todoInProgress" :key="todo.id">
+            <label>
+              <input type="checkbox" v-model="todo.complete" />
+
+              {{ todo.name }}
+            </label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Completed Todos -->
+      <section v-if="todoCompleted.length">
+        <h3 class="font-bold text-2xl mb-4">Completed</h3>
+        <hr />
+        <ul class="text-xl font-semibold text-green-600">
+          <li v-for="(todo) in todoCompleted" :key="todo.id">
+            <label>
+              <input type="checkbox" v-model="todo.complete" />
+
+              {{ todo.name }}
+            </label>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script>
+      const app = {
+        data() {
+          return {
+            newTodo: "",
+            todos: [],
+            id: 0,
+          };
+        },
+
+        methods: {
+          addNewTodo() {
+            this.todos.push({
+              id: this.id++,
+              name: this.newTodo,
+              complete: false,
+            });
+
+            // Clear the input after submit
+            this.newTodo = "";
+          },
+        },
+
+        computed: {
+          todoCompleted() {
+            return this.todos.filter((todo) => todo.complete);
+          },
+
+          todoInProgress() {
+            return this.todos.filter((todo) => !todo.complete);
+          },
+        },
+      };
+      Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>
