@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Attribute Binding and Event Handling</title>
+  </head>
+  <body id="app">
+    <button
+      class="rounded text-white px-5 py-1 text-2xl font-semibold"
+      :class="active ? 'bg-orange-500' : 'bg-blue-500'"
+      @click="toggle"
+    >
+      {{ msg }}
+    </button>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            msg: "Hey!",
+            active: false,
+          };
+        },
+
+        methods: {
+          toggle() {
+            this.active = !this.active;
+
+            this.active ? (this.msg = "Hola!") : (this.msg = "How are ya?");
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
