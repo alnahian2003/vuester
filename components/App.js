@@ -1,6 +1,6 @@
-import AppButton from "/components/AppButton.js";
+import AppButton from "./AppButton.js";
 
-import AppCard from "/components/AppCard.js";
+import AppCard from "./AppCard.js";
 
 export default {
   components: {
