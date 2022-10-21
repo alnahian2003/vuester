@@ -19,22 +19,16 @@
       class="flex flex-col items-center space-y-8 max-w-4xl content-center mx-auto"
     >
       <h1 class="text-5xl font-bold text-center">One Vue Component Per File</h1>
-      <app-button>Hello World!</app-button>
+      <app-button type="secondary">Hello World!</app-button>
+
       <div class="flex flex-col md:flex-row gap-5">
         <app-card></app-card>
       </div>
     </div>
     <script type="module">
-      import AppButton from "./components/appButton.js";
+      import App from "./components/App.js";
 
-      import AppCard from "./components/appCard.js";
-      const app = Vue.createApp({
-        components: {
-          "app-button": AppButton,
-
-          "app-card": AppCard,
-        },
-      }).mount("#app");
+      Vue.createApp(App).mount("#app");
     </script>
   </body>
 </html>
