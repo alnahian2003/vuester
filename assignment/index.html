@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Assignments List</title>
+  </head>
+  <body class="text-slate-400 bg-gray-700">
+    <div
+      id="app"
+      class="space-y-8 mx-auto max-w-xl my-20 bg-slate-800 rounded-lg drop-shadow-lg p-5"
+    ></div>
+
+    <script type="module">
+      import App from "./components/App.js";
+
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
