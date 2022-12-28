@@ -14,22 +14,22 @@
   </head>
   <body class="bg-slate-800">
     <main class="h-screen grid place-items-center">
-      <div>
+      <div class="space-y-6">
+        <h1 class="text-white text-4xl font-bold">My Name is {{ name }}</h1>
+
         <input
-          class="px-5 py-3"
+          class="px-5 py-3 bg-yellow-50"
           type="text"
           v-model="name"
           placeholder="Enter your name" />
       </div>
     </main>
-
-    <!-- -->
-
+    
     <script>
       Vue.createApp({
         data() {
           return {
-            name: "",
+            name: "Jeff",
           };
         },
       }).mount("main");
