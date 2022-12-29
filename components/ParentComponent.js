@@ -6,7 +6,7 @@ export default {
   <h1>This is a parent component</h1>
   <p>
     if you try to click that button below, which is came from a child
-    component, it gets triggered by $emit
+    component, it gets triggered by <pre>$emit</pre>
   </p>
   <ChildComponent @boom="boom">{{ btn }}</ChildComponent>
   </div>
