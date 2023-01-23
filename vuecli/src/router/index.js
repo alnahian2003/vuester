@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import ContactView from "../views/ContactView.vue";
 import FoodView from "../views/FoodView.vue";
 import Social from "@/components/social/Social.vue";
+import CounterView from "@/views/CounterView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/social",
       name: "social",
       component: Social,
+    },
+    {
+      path: "/counter",
+      name: "counter",
+      component: CounterView,
     },
   ],
 });

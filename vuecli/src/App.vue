@@ -21,6 +21,7 @@ import HelloWorld from "./components/HelloWorld.vue";
         <RouterLink :to="{ name: 'contact' }">Contact</RouterLink>
         <RouterLink :to="{ name: 'food' }">Food</RouterLink>
         <RouterLink :to="{ name: 'social' }">Social</RouterLink>
+        <RouterLink :to="{ name: 'counter' }">Counter</RouterLink>
       </nav>
     </div>
   </header>
