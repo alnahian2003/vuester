@@ -3,13 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header class="bg-slate-800 p-4 md:px-16 md:py-4 text-gray-200">
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="mx-auto max-h-screen max-w-screen-lg py-10">
+    <RouterView />
+  </div>
 </template>

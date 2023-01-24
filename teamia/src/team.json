@@ -1,0 +1,26 @@
+{
+  "name": "Teamia",
+  "spots": 5,
+  "members": [
+    {
+      "name": "Emmye Hallagan",
+      "email": "ehallagan0@yahoo.co.jp",
+      "status": "Active"
+    },
+    {
+      "name": "Thoma Sterke",
+      "email": "tsterke1@ocn.ne.jp",
+      "status": "Active"
+    },
+    {
+      "name": "Dorie Jerrems",
+      "email": "djerrems2@springer.com",
+      "status": "Active"
+    },
+    {
+      "name": "Jamaal Worvell",
+      "email": "jworvell3@linkedin.com",
+      "status": "Busy"
+    }
+  ]
+}
