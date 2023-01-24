@@ -9,19 +9,21 @@ export const useTeamStore = defineStore("team", {
 
   actions: {
     // Import/fetch data from api or somewhere
-    seed() {
-      import("@/team.json").then((res) => {
-        this.$state = res.default;
-      });
+    async seed() {
+      let res = await import("@/team.json");
+      this.$state = res.default;
     },
   },
 
   getters: {
+    // Determine if any spots available
+    // @return boolean
     spotsAvailable() {
       return this.members.length >= this.spots;
     },
 
     // Number of spots left
+    // @return boolean|string
     spotsLeft() {
       let available = this.spots - this.members.length;
       return available > 0 ? available : "No";
