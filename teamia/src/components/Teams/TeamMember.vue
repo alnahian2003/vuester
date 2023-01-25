@@ -12,15 +12,25 @@
     <td class="text-gray-500 px-6 py-4">{{ email }}</td>
 
     <td class="px-6 py-4">
-      <button class="text-green-400 text-xl">{{ status }}</button>
+      <button class="text-xl" :class="statusClass">
+        {{ status }}
+      </button>
     </td>
   </tr>
 </template>
 
 <script setup>
-defineProps({
+import { reactive } from "vue";
+
+let prop = defineProps({
   name: String,
   email: String,
   status: String,
+});
+
+let statusClass = reactive({
+  "text-green-400": prop.status.toLowerCase() === "active",
+  "text-orange-400": prop.status.toLowerCase() === "busy",
+  "text-red-400": prop.status.toLowerCase() === "inactive",
 });
 </script>
