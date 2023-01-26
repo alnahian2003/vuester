@@ -5,13 +5,11 @@ let team = useTeamStore();
 </script>
 
 <template>
-  <table class="table-fixed border-spacing-2 border-separate">
+  <table class="my-3 table-fixed border-spacing-y-2 border-separate">
     <thead>
-      <th class="text-left px-6 py-2">Name</th>
-      <th class="text-left px-6 py-2">Email</th>
-      <th class="text-left px-6 py-2">Status</th>
+      <th class="text-left">Name & Email</th>
+      <th class="text-left">Status</th>
     </thead>
-
     <tbody>
       <TeamMember
         v-for="member in team.members"
