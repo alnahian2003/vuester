@@ -7,6 +7,7 @@ let team = useTeamStore();
   <header class="flex justify-between">
     <div>
       <button
+        @click="$emit('add')"
         class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:bg-gray-400"
         :disabled="team.spotsAvailable"
       >
