@@ -4,7 +4,7 @@
       <img
         :src="`https://i.pravatar.cc/50?u=${email}`"
         :alt="name"
-        class="rounded-xl mx-center"
+        class="rounded-xl mx-center blur-[2px]"
       />
 
       <div>
@@ -15,7 +15,7 @@
 
     <td>
       <span
-        class="my-2 inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full"
+        class="my-2 inline-flex select-none items-center text-xs border font-medium px-2.5 py-0.5 rounded-full"
         :class="statusClass.pill"
       >
         <span
@@ -39,9 +39,12 @@ let prop = defineProps({
 
 let statusClass = reactive({
   pill: {
-    "text-green-600 bg-green-100": prop.status.toLowerCase() === "active",
-    "text-orange-600 bg-orange-100": prop.status.toLowerCase() === "busy",
-    "text-red-600 bg-red-100": prop.status.toLowerCase() === "inactive",
+    "text-green-600 bg-green-100 border-green-400":
+      prop.status.toLowerCase() === "active",
+    "text-orange-600 bg-orange-100 border-orange-400":
+      prop.status.toLowerCase() === "busy",
+    "text-red-600 bg-red-100 border-red-400":
+      prop.status.toLowerCase() === "inactive",
   },
   indicator: {
     "bg-green-400": prop.status.toLowerCase() === "active",
