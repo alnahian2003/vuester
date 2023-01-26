@@ -4,7 +4,7 @@
       <img
         :src="`https://i.pravatar.cc/50?u=${email}`"
         :alt="name"
-        class="rounded-xl mx-center blur-[2px]"
+        class="rounded-xl mx-center blur-[2px] hover:blur-none transition"
       />
 
       <div>

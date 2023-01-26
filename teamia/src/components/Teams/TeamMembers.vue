@@ -21,7 +21,7 @@ let team = useTeamStore();
   </table>
 
   <p
-    class="text-right text-gray-600 italic"
+    class="text-right text-red-400 font-medium italic"
     v-show="team.members.length >= team.spots"
   >
     There are no remaining team spots. Upgrade to add more.
