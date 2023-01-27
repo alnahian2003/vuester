@@ -18,7 +18,7 @@ export const useTeamStore = defineStore("team", {
   getters: {
     // Determine if any spots available
     // @return boolean
-    spotsAvailable() {
+    spotsUnavailable() {
       return this.members.length >= this.spots;
     },
 
