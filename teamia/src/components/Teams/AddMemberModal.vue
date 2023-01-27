@@ -8,18 +8,24 @@ let team = useTeamStore();
 
 let showModal = ref(false);
 
-const form = reactive({
+const initialState = {
   name: "",
   email: "",
   status: sample(["Active", "Inactive", "Busy"]),
-});
+};
 
-// Pretend adding a new member
+const form = reactive({ ...initialState });
 
-/* KNOWN ISSUE: Adds the same input over and over again */
+// Handle form submit
 const addMember = () => {
   if (form.name && form.email) {
-    team.members.push(form);
+    team.add({
+      name: form.name,
+      email: form.email,
+      status: form.status,
+    });
+
+    Object.assign(form, initialState); // reset the form
   } else {
     alert("Add your team member details first");
   }

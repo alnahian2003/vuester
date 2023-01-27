@@ -1,5 +1,5 @@
 <template>
-  <tr class="bg-gray-100 px-12">
+  <tr class="bg-slate-200 px-12 hover:shadow cursor-pointer transition">
     <td class="flex items-center gap-x-4 px-6 py-4">
       <img
         :src="`https://i.pravatar.cc/50?u=${email}`"

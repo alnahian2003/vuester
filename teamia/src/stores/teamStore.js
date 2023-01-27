@@ -13,6 +13,15 @@ export const useTeamStore = defineStore("team", {
       let res = await import("@/team.json");
       this.$state = res.default;
     },
+
+    // Pretend to add new team member to `members` array
+    add(data) {
+      if (!this.spotsUnavailable) {
+        return this.members.push(data);
+      } else {
+        alert("No spots available"); // little validation incase the user bypass disabling the button
+      }
+    },
   },
 
   getters: {
