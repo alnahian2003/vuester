@@ -19,11 +19,7 @@ const form = reactive({ ...initialState });
 // Handle form submit
 const addMember = () => {
   if (form.name && form.email) {
-    team.add({
-      name: form.name,
-      email: form.email,
-      status: form.status,
-    });
+    team.add({ ...form });
 
     Object.assign(form, initialState); // reset the form
   } else {
